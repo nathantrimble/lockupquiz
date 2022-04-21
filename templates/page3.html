@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% set active_page = "page2" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <!--page content-->
+    <h1> Page</h1>
+
+    <ul>
+     <li>  {{ session['q1'] }} </li>
+     <li>  {{ session['q2'] }} </li>
+     <li>  {{ session['q3'] }} </li>
+
+    </ul>
+    <div id="footer">
+
+    <a href="/startOver">Start over</a>
+
+    </div>
+{% endblock %}
