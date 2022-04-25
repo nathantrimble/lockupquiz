@@ -6,17 +6,19 @@
 
 {% block content %}
     <!--page content-->
-    <h1> Page</h1>
-
-    <form action={{ url_for("renderPage2") }} method='POST'>
+    <h1>QUESTION 2</h1>
+    <div>
+    <form action={{ url_for("renderPage2") }} method='POST' >
         <input type="radio" id="html" name="q2" value="HTML">
         <label for="html">HTML</label><br>
         <input type="radio" id="css" name="q2" value="CSS">
         <label for="css">CSS</label><br>
         <input type="radio" id="javascript" name="q2" value="JavaScript">
         <label for="javascript">JavaScript</label>
-
+        <br>
          <input type="submit" value="Submit">
     </form>
-
+    </div>
+    <div class = 'spacer'>
+    </div>
 {% endblock %}

@@ -6,10 +6,8 @@ from flask import session
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
 app.secret_key=os.environ["SECRET_KEY"];
 
-answers= ["HTML","JavaScript","CSS"]
-correct1 = False
-correct2 = False
-correct3 = False
+answers= ["GRIND","JavaScript","CSS"]
+
 
 @app.route("/")
 def render_main():
@@ -22,32 +20,41 @@ def startOver():
 
 @app.route('/page1',methods=['GET','POST'])
 def renderPage1():
-    session["q1"]=request.form['q1']
+    if request.form['q1'] not in session:
+        session["q1"]=request.form['q1']
 
-    if session['q1']==answers[0]:
-        correct1 == True
-    else:
-        correct1 == False
-    return render_template('page1.html', c1 = correct1)
+
+    return render_template('page1.html')
 
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
-    session["q2"]=request.form['q2']
+    if request.form['q2'] not in session:
+        session["q2"]=request.form['q2']
 
-    if session['q2']==answers[1]:
-        correct2 == True
-    else:
-        correct2 == False
-    return render_template('page2.html', c2 = correct2)
+    return render_template('page2.html')
 
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
-    session["q3"]=request.form['q3']
-    if session['q3']==answers[2]:
-        correct3 == True
+    if request.form['q3'] not in session:
+        session["q3"]=request.form['q3']
+
+    if session['q1'] == answers[0]:
+        a1 = "Correct!"
     else:
-        correct3 == False
-    return render_template('page3.html', c3 = correct3)
+        a1 = "False!"
+
+    if session['q2'] == answers[1]:
+        a2 = "Correct!"
+    else:
+        a2 = "False!"
+
+    if session['q3'] == answers[2]:
+        a3 = "Correct!"
+    else:
+        a3 = "False!"
+
+
+    return render_template('page3.html', b1 = a1, b2 = a2, b3 = a3)
 
 
 

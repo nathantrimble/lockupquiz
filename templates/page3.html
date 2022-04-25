@@ -6,17 +6,20 @@
 
 {% block content %}
     <!--page content-->
-    <h1> Page</h1>
-
+    <h1>RESULTS</h1>
+    <div>
     <ul>
-     <li>  {{ session['q1'] }} </li>
-     <li>  {{ session['q2'] }} </li>
-     <li>  {{ session['q3'] }} {{c3}}</li>
+     <li>  {{ session['q1'] }} {{b1}}</li>
+     <li>  {{ session['q2'] }} {{b2}}</li>
+     <li>  {{ session['q3'] }} {{b3}}</li>
 
     </ul>
+    </div>
     <div id="footer">
 
     <a href="/startOver">Start over</a>
 
+    </div>
+    <div class = spacer>
     </div>
 {% endblock %}
