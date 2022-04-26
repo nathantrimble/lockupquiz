@@ -24,3 +24,7 @@ html{
 .spacer{
     height: 750px
 }
+p{
+    text-align: center;
+    font-weight: bold;
+}

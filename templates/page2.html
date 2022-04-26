@@ -7,14 +7,17 @@
 {% block content %}
     <!--page content-->
     <h1>QUESTION 3</h1>
+    <p>
+        Now you are an old old man, how do you pass your wealth on to the next generation?
+    </p>
     <div>
     <form action={{ url_for("renderPage3") }} method='POST' >
-        <input type="radio" id="html" name="q3" value="HTML">
-        <label for="html">HTML</label><br>
-        <input type="radio" id="css" name="q3" value="CSS">
-        <label for="css">CSS</label><br>
-        <input type="radio" id="javascript" name="q3" value="JavaScript">
-        <label for="javascript">JavaScript</label>
+        <input type="radio" id="cc" name="q3" value="CountryClub">
+        <label for="cc">Set aside a large trust fund to forever corrupt your child</label><br>
+        <input type="radio" id="bgw" name="q3" value="BillGatesWannabe">
+        <label for="bgw">Donate your billions to good-doing organizations across the globe</label><br>
+        <input type="radio" id="yr" name="q3" value="YE$$$IR">
+        <label for="yr">$PENDING $PREE</label>
         <br>
          <input type="submit" value="Submit">
     </form>
